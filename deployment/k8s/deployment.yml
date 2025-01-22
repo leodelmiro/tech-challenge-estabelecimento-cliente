@@ -19,9 +19,9 @@ spec:
       labels:
         app.kubernetes.io/name: backend-cliente-app
     spec:
-      serviceAccountName: backend-estabelecimento-serviceaccount
+      serviceAccountName: backend-cliente-serviceaccount
       containers:
-        - name: backend-estabelecimento-app
+        - name: backend-cliente-app
           image: DOCKER_IMAGE
           imagePullPolicy: Always
           resources:
@@ -32,36 +32,21 @@ spec:
               cpu: "512m"
               memory: "2048M"
           env:
-            - name: SPRING_DATASOURCE_URL
+            - name: DYNAMODB_URL
               valueFrom:
                 configMapKeyRef:
                   name: backend-estabelecimento-configmap
                   key: db_url
-            - name: SPRING_DATASOURCE_USERNAME
+            - name: AWS_ACCESS_KEY
               valueFrom:
                 configMapKeyRef:
                   name: backend-estabelecimento-configmap
-                  key: db_username
-            - name: SPRING_DATASOURCE_PASSWORD
+                  key: aws_access_key
+            - name: AWS_SECRET_KEY
               valueFrom:
                 configMapKeyRef:
                   name: backend-estabelecimento-configmap
-                  key: db_password
-            - name: MERCADO_PAGO_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: backend-estabelecimento-configmap
-                  key: mercado_pago_url
-            - name: MERCADO_PAGO_TOKEN
-              valueFrom:
-                configMapKeyRef:
-                  name: backend-estabelecimento-configmap
-                  key: mercado_pago_token
-            - name: SPRING_REDIS_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: backend-estabelecimento-configmap
-                  key: redis_url
+                  key: aws_secret_key
           ports:
             - name: http-port
               containerPort: 8080

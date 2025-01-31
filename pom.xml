@@ -12,7 +12,7 @@
     <artifactId>cliente</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Estabelecimento - Tech Challenge - App Cliente</name>
-    <description>Microsserviço de Produtos de um Estabelecimento - Tech Challenge Fiap</description>
+    <description>Microsserviço de Cliente de um Estabelecimento - Tech Challenge Fiap</description>
     <url/>
     <licenses>
         <license/>

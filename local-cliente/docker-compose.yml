@@ -1,6 +1,6 @@
 services:
-  localstack:
-    container_name: "${LOCALSTACK_DOCKER_NAME:-localstack-main}"
+  localstack-cliente:
+    container_name: "${LOCALSTACK_DOCKER_NAME:-localstack-cliente}"
     image: localstack/localstack
     ports:
       - "4566:4566"            # LocalStack Gateway
@@ -20,9 +20,9 @@ services:
       dockerfile: ./Dockerfile
     container_name: spring-boot-app-cliente
     ports:
-      - "8080:8080"
+      - "8081:8080"
     depends_on:
-      - localstack
+      - localstack-cliente
     networks:
       - backend
 

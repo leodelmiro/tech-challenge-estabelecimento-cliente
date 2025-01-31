@@ -35,17 +35,17 @@ spec:
             - name: DYNAMODB_URL
               valueFrom:
                 configMapKeyRef:
-                  name: backend-estabelecimento-configmap
+                  name: backend-cliente-configmap
                   key: db_url
             - name: AWS_ACCESS_KEY
               valueFrom:
                 configMapKeyRef:
-                  name: backend-estabelecimento-configmap
+                  name: backend-cliente-configmap
                   key: aws_access_key
             - name: AWS_SECRET_KEY
               valueFrom:
                 configMapKeyRef:
-                  name: backend-estabelecimento-configmap
+                  name: backend-cliente-configmap
                   key: aws_secret_key
           ports:
             - name: http-port

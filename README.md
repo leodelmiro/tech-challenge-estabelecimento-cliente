@@ -61,6 +61,9 @@ Este repositório é referente ao microserviço responsável pelos Clientes com 
     - Gateway: Implementações das Interfaces de acesso do Core.
     - Repository: Database
 - Config: Configurações do Projeto
+- Tests: 
+  - BDD: Testes de Integração com BDD
+  - main/java: Testes unitários
 
 ## Rodando o Projeto Local
 

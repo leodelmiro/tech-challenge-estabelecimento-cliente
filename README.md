@@ -80,7 +80,7 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 Clone o repositório do projeto:
 
 ```sh
-git clone https://github.com/leodelmiro/tech-challenge-estabelecimento-app
+git clone https://github.com/leodelmiro/tech-challenge-estabelecimento-cliente
 ```
 
 ### 3. Executar o Script de Setup

@@ -17,11 +17,8 @@ public interface ClienteMapper {
         return cpf != null ? new CPF(cpf) : null;
     }
 
-    @Mapping(target = "id", ignore = true)
     @Mapping(target = "criadoEm", ignore = true)
-    @Mapping(source = "cpf", target = "cpf")
     Cliente toCLiente(IdentificaClienteRequest identificaClienteRequest);
 
-    @Mapping(source = "cpf", target = "cpf")
     ClienteResponse toClienteResponse(Cliente cliente);
 }

@@ -1,16 +1,12 @@
-spring:
-  datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/cliente}
-    username: ${SPRING_DATASOURCE_USERNAME:postgres}
-    password: ${SPRING_DATASOURCE_PASSWORD:1234}
-  jpa:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-  data:
-    redis:
-      host: ${SPRING_REDIS_URL:localhost}
-      port: ${SPRING_REDIS_PORT:6379}
+aws:
+  region: ${AWS_REGION:us-east-1}
+
+amazon:
+  dynamodb:
+    endpoint: ${DYNAMODB_URL:http://host.docker.internal:4566}
+  aws:
+    accesskey: ${AWS_ACCESS_KEY:test}
+    secretkey: ${AWS_SECRET_KEY:test}
 
 management:
   endpoints:

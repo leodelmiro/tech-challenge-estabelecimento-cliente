@@ -31,7 +31,7 @@ Este repositório é referente ao microserviço responsável pelos Clientes com 
 - Java
 - Spring
 - Swagger
-- Postgres
+- DynamoDB
 - Docker
 - Docker Compose
 - AWS
@@ -47,34 +47,6 @@ Este repositório é referente ao microserviço responsável pelos Clientes com 
     - Identifica Cliente </br>
       ![Identifica Cliente](./desenhos/IdentificaClienteComponentes.png)
 
-- Produtos
-    - Cadastra Produto </br>
-      ![Cadastra Produto](./desenhos/CadastraProdutoComponentes.png)
-    - Editar Produto </br>
-      ![Editar Produto](./desenhos/EditaProdutoComponentes.png)
-    - Remover Produto </br>
-      ![Remover Produto](./desenhos/RemoveProdutoComponentes.png)
-    - Busca Produto </br>
-      ![Busca Produto](./desenhos/BuscaProdutoComponentes.png)
-    - Busca Todos os Produto e por Tipos </br>
-      ![Busca Todos os Produto e por Tipos](./desenhos/ListaProdutosComponentes.png)
-
-- Pedidos
-    - Inicia Pedido </br>
-      ![Inicia Pedido](./desenhos/IniciaPedidoComponentes.png)
-    - Adiciona Produto ao Pedido </br>
-      ![Adiciona Produto ao Pedido](./desenhos/AdicionaProdutoAoPedidoComponentes.png)
-    - Remove Produto Pedido </br>
-      ![Remove Produto Pedido](./desenhos/RemoveProdutoPedidoComponentes.png)
-    - Avança Pedido </br>
-      ![Avança Pedido](./desenhos/AvancaPedidoComponentes.png)
-    - Lista Pedidos e Lista Pedidos na Fila </br>
-      ![Lista Pedidos e Lista Pedidos na Fila](./desenhos/ListaPedidosComponentes.png)
-
-- Webhooks
-    - Pagamentos </br>
-      ![Webhook Pagamentos](./desenhos/WebhookPagamentoComponentes.png)
-
 ## Estrutura do Projeto
 
 - Entrypoint: Entrada de acesso externo para a aplicação
@@ -89,6 +61,9 @@ Este repositório é referente ao microserviço responsável pelos Clientes com 
     - Gateway: Implementações das Interfaces de acesso do Core.
     - Repository: Database
 - Config: Configurações do Projeto
+- Tests: 
+  - BDD: Testes de Integração com BDD
+  - main/java: Testes unitários
 
 ## Rodando o Projeto Local
 
@@ -105,7 +80,7 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 Clone o repositório do projeto:
 
 ```sh
-git clone https://github.com/leodelmiro/tech-challenge-estabelecimento-app
+git clone https://github.com/leodelmiro/tech-challenge-estabelecimento-cliente
 ```
 
 ### 3. Executar o Script de Setup

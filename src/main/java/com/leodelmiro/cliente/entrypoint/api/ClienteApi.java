@@ -43,8 +43,8 @@ public class ClienteApi {
     @PostMapping
     public ResponseEntity<ClienteResponse> cadastra(@Valid @RequestBody IdentificaClienteRequest identificaClienteRequest) {
         var clienteResponse = ClienteController.cadastra(identificaClienteRequest, cadastraClienteUseCase, clienteMapper);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-                .buildAndExpand(clienteResponse.id()).toUri();
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{cpf}")
+                .buildAndExpand(clienteResponse.cpf()).toUri();
         return ResponseEntity.created(uri).body(clienteResponse);
     }
 

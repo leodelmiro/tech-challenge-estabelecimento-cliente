@@ -3,7 +3,6 @@ package com.leodelmiro.cliente.core.domain;
 import java.time.LocalDateTime;
 
 public class Cliente {
-    private Long id;
     private CPF cpf;
     private String nome;
     private String email;
@@ -12,23 +11,14 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(Long id, CPF cpf, String nome, String email, LocalDateTime criadoEm) {
+    public Cliente(CPF cpf, String nome, String email, LocalDateTime criadoEm) {
         if (nome.isBlank()) throw new IllegalArgumentException("Nome não pode ser vazio");
         if (email.isBlank()) throw new IllegalArgumentException("Email não pode ser vazio");
 
-        this.id = id;
         this.cpf = cpf;
         this.nome = nome;
         this.email = email;
         this.criadoEm = (criadoEm == null) ? LocalDateTime.now() : criadoEm;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public CPF getCpf() {

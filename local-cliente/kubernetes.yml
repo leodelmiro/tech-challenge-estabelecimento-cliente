@@ -62,8 +62,8 @@ spec:
     spec:
       serviceAccountName: backend-cliente-serviceaccount
       containers:
-        - name: backend-estabelecimento-app
-          image: leodelmiro/fiap-cliente:latest
+        - name: backend-cliente-app
+          image: DOCKER_IMAGE
           imagePullPolicy: Always
           resources:
             requests:
@@ -73,21 +73,21 @@ spec:
               cpu: "512m"
               memory: "2048M"
           env:
-            - name: SPRING_DATASOURCE_URL
+            - name: DYNAMODB_URL
               valueFrom:
                 configMapKeyRef:
                   name: backend-estabelecimento-configmap
                   key: db_url
-            - name: SPRING_DATASOURCE_USERNAME
+            - name: AWS_ACCESS_KEY
               valueFrom:
                 configMapKeyRef:
                   name: backend-estabelecimento-configmap
-                  key: db_username
-            - name: SPRING_DATASOURCE_PASSWORD
+                  key: aws_access_key
+            - name: AWS_SECRET_KEY
               valueFrom:
                 configMapKeyRef:
                   name: backend-estabelecimento-configmap
-                  key: db_password
+                  key: aws_secret_key
           ports:
             - name: http-port
               containerPort: 8080
@@ -127,6 +127,6 @@ metadata:
   name: backend-cliente-configmap
   namespace: backend-estabelecimento
 data:
-  db_url: jdbc:postgresql://estabelecimento.cxhd5ilcfd6d.us-east-1.rds.amazonaws.com:5432/cliente
-  db_username: "postgres"
-  db_password: "12345678"
+  db_url: http://localhost:4566
+  aws_access_key: test
+  aws_secret_key: test

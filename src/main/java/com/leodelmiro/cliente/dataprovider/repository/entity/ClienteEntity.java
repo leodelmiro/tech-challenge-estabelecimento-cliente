@@ -1,51 +1,40 @@
 package com.leodelmiro.cliente.dataprovider.repository.entity;
 
-import jakarta.persistence.*;
-import org.hibernate.annotations.CreationTimestamp;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverted;
+import com.leodelmiro.cliente.config.LocalDateTimeConverter;
 
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "tb_cliente")
+@DynamoDBTable(tableName ="tb_cliente")
 public class ClienteEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Embedded
-    private CPFEntity cpf;
-
+    @DynamoDBHashKey
+    private String cpf;
+    @DynamoDBAttribute
     private String nome;
-
+    @DynamoDBAttribute
     private String email;
-
-    @CreationTimestamp
+    @DynamoDBAttribute
+    @DynamoDBTypeConverted( converter = LocalDateTimeConverter.class )
     private LocalDateTime criadoEm;
 
     public ClienteEntity() {
     }
 
-    public ClienteEntity(Long id, CPFEntity cpf, String nome, String email, LocalDateTime criadoEm) {
-        this.id = id;
+    public ClienteEntity(Long id, String cpf, String nome, String email, LocalDateTime criadoEm) {
         this.cpf = cpf;
         this.nome = nome;
         this.email = email;
         this.criadoEm = criadoEm;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public CPFEntity getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(CPFEntity cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 

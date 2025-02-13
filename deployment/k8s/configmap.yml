@@ -4,6 +4,6 @@ metadata:
   name: backend-cliente-configmap
   namespace: backend-estabelecimento
 data:
-  db_url: jdbc:postgresql://estabelecimento.cpmueqg0y0dn.us-east-1.rds.amazonaws.com:5432/cliente
-  db_username: "postgres"
-  db_password: "12345678"
+  db_url: dynamodb.us-east-1.amazonaws.com
+  aws_access_key: "{{AWS_ACCESS_KEY_ID}}"
+  aws_secret_key: "{{AWS_SECRET_ACCESS_KEY}}"

@@ -2,7 +2,7 @@ package com.leodelmiro.cliente.config;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
-import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.auth.BasicSessionCredentials;
 import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
@@ -27,12 +27,15 @@ public class DynamoDBConfig {
     @Value("${amazon.aws.secretkey}")
     private String secretKey;
 
+    @Value("${amazon.aws.session}")
+    private String session;
+
     @Value("${aws.region}")
     private String region;
 
     private AWSCredentialsProvider awsDynamoDBCredentials() {
         return new AWSStaticCredentialsProvider(
-                new BasicAWSCredentials(accessKey, secretKey));
+                new BasicSessionCredentials(accessKey, secretKey, session));
     }
 
     @Primary

@@ -47,6 +47,11 @@ spec:
                 configMapKeyRef:
                   name: backend-cliente-configmap
                   key: aws_secret_key
+            - name: AWS_SESSION_TOKEN
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-cliente-configmap
+                  key: aws_session_token
           ports:
             - name: http-port
               containerPort: 8080

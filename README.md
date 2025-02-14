@@ -12,10 +12,9 @@
 
 ## Breve Descrição
 
-Aplicação se trata de um Projeto Fiap Tech Challenge - Software Architecture, simulando um projeto de um estabelecimento
-de pedidos (fast-food).
+Aplicação se trata de um Projeto Fiap Tech Challenge - Software Architecture, simulando um projeto de um estabelecimento de pedidos (fast-food).
 
-Este repositório é referente ao microserviço responsável pelos Clientes com a Solução em Clean Architecture
+Este repositório é referente ao microserviço responsável pelos Clientes com a Solução em Clean Architecture Java Spring.
 
 ### Demais repositórios
 - https://github.com/leodelmiro/tech-challenge-estabelecimento-db

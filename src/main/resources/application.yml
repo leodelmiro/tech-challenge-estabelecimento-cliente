@@ -7,6 +7,7 @@ amazon:
   aws:
     accesskey: ${AWS_ACCESS_KEY:test}
     secretkey: ${AWS_SECRET_KEY:test}
+    session: ${AWS_SESSION_TOKEN:test}
 
 management:
   endpoints:
